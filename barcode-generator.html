@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Barcode Generator</title>
+  <style>
+    body { font-family: Arial, sans-serif; background: #f7f7f7; margin: 0; padding: 0; }
+    .container { max-width: 400px; margin: 40px auto; background: #fff; border-radius: 8px; box-shadow: 0 2px 8px #ccc; padding: 32px; }
+    h1 { text-align: center; margin-bottom: 24px; }
+    #barcode-output { margin: 24px 0; text-align: center; }
+    input, button { font-size: 1.1em; padding: 8px; margin: 4px 0; width: 100%; box-sizing: border-box; }
+    button { cursor: pointer; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Barcode Generator</h1>
+    <input type="text" id="barcode-number" placeholder="Enter number to generate barcode" />
+    <button id="generate-barcode">Generate Barcode</button>
+    <div id="barcode-output"></div>
+    <button id="print-barcode" style="display:none;">Print Barcode</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+  <script src="barcode-generator.js"></script>
+</body>
+</html> 

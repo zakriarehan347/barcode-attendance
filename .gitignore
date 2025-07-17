@@ -1,0 +1,23 @@
+# Node modules
+node_modules/
+
+# Build output
+dist/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# App data
+*.log
+
+# Assets
+assets/
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.gif
+
+# Electron store data (user-specific, not source)
+/config.json
