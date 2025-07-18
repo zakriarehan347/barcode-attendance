@@ -73,31 +73,13 @@ barcodeInput.addEventListener('keydown', async (e) => {
     barcodeInput.value = '';
     if (!code) return;
     await handleScan(code);
-  }
-});
-
-document.addEventListener('click', (e) => {
-  // Only focus barcode input if not clicking on an input or textarea
-  if (
-    e.target.tagName !== 'INPUT' &&
-    e.target.tagName !== 'TEXTAREA' &&
-    document.activeElement !== barcodeInput
-  ) {
+    // Keep focus on the input for continuous scanning
     barcodeInput.focus();
   }
 });
 
-document.addEventListener('keydown', (e) => {
-  // Only focus barcode input if not typing in another input or textarea
-  const active = document.activeElement;
-  if (
-    active !== barcodeInput &&
-    active.tagName !== 'INPUT' &&
-    active.tagName !== 'TEXTAREA'
-  ) {
-    barcodeInput.focus();
-  }
-});
+// Remove the click and keydown event listeners that were auto-focusing
+// Users can now see and interact with the input field directly
 
 async function handleScan(code) {
   if (!attendees.length) {
